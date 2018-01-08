@@ -29,7 +29,7 @@ module Mastodon
     end
 
     def to_s
-      [[to_a.join('.'), flags].join, "ME3"].join(" ")
+      [to_a.join('.'), flags].join
     end
 
     def source_base_url
