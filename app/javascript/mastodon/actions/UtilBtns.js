@@ -6,9 +6,9 @@ export const UTILBTNS_RISA = 'UTILBTNS_RISA';
 export const UTILBTNS_GOJI = 'UTILBTNS_GOJI';
 export const UTILBTNS_HARUKIN = 'UTILBTNS_HARUKIN';
 
-export function submitRisa () {
+export function submitRisa (content = "") {
 	return function (dispatch, getState) {
-		let text = "@RISA ";
+		let text = `@RISA ${content}`;
 
 		dispatch(submitRisaRequest());
 		dispatch(changeCompose(text));
