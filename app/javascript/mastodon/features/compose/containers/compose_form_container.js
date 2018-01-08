@@ -62,8 +62,8 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(insertEmojiCompose(position, data));
   },
 
-  onRisaSubmit () {
-    dispatch(submitRisa());
+  onRisaSubmit (content) {
+    dispatch(submitRisa(content));
   },
 
 });
