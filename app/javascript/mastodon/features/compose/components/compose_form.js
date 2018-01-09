@@ -216,6 +216,11 @@ export default class ComposeForm extends ImmutablePureComponent {
         </div>
 
         <div className='compose-form__publish'>
+          <div className="user-counter__wrapper">
+            <i className="fa fa-users"></i>
+            <span>NaN人</span>
+          </div>
+
           <div className='compose-form__publish-button-wrapper'>
             <Button id="utilBtns__button--risa" className="utilBtns__button" text={intl.formatMessage(messages.utilBtns_risa)} onClick={this.handleOnRisaSubmit} block />
             <Button text={publishText} onClick={this.handleSubmit} disabled={disabled || this.props.is_uploading || length(text) > 500 || (text.length !== 0 && text.trim().length === 0)} block />
