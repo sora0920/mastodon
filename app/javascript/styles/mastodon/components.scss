@@ -540,10 +540,10 @@
     display: flex;
     justify-content: flex-end;
     min-width: 0;
+    padding-top: 10px;
 
     * {
       margin-right: 1em;
-      padding-top: 10px;
     }
 
     *:last-child {
@@ -559,11 +559,10 @@
 
     .compose-form__publish-button-wrapper {
       overflow: hidden;
-      padding-top: 10px;
 
       button {
-        display: inline-block !important;
-        width: auto !important;
+        display: inline-block;
+        width: auto;
 
         margin-right: 0.5em;
       }
