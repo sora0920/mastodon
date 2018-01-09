@@ -18,7 +18,7 @@ import { isMobile } from '../../../is_mobile';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 import { length } from 'stringz';
 import { countableText } from '../util/counter';
-import UtilBtns from '../containers/UtilBtns_container';
+import { UserCounter } from './user_counter';
 
 const messages = defineMessages({
   placeholder: { id: 'compose_form.placeholder', defaultMessage: 'What is on your mind?' },
@@ -218,7 +218,7 @@ export default class ComposeForm extends ImmutablePureComponent {
         <div className='compose-form__publish'>
           <div className="user-counter__wrapper">
             <i className="fa fa-users"></i>
-            <span>NaN人</span>
+            <UserCounter />
           </div>
 
           <div className='compose-form__publish-button-wrapper'>
