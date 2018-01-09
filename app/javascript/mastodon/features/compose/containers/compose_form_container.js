@@ -65,7 +65,7 @@ const mapDispatchToProps = (dispatch) => ({
   onPickEmoji (position, data) {
     dispatch(insertEmojiCompose(position, data));
   },
-
+  
   onRisaSubmit (textarea) {
     dispatch(submitRisa(textarea));
   },

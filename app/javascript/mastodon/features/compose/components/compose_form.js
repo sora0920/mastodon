@@ -149,7 +149,7 @@ export default class ComposeForm extends ImmutablePureComponent {
     this._restoreCaret = position + emojiChar.length + 1;
     this.props.onPickEmoji(position, data);
   }
-
+  
   handleOnRisaSubmit = () => this.props.onRisaSubmit(this.autosuggestTextarea.textarea);
   handleOnGojiSubmit = () => this.props.onGojiSubmit(this.autosuggestTextarea.textarea);
   handleOnHarukinSubmit = () => this.props.onHarukinSubmit(this.autosuggestTextarea.textarea);
