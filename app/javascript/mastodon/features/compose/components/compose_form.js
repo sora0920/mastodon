@@ -146,8 +146,13 @@ export default class ComposeForm extends ImmutablePureComponent {
     this.props.onPickEmoji(position, data);
   }
 
+  handleOnRisaSubmit = () => {
+    this.props.onRisaSubmit(this.autosuggestTextarea.textarea.value);
+    this.autosuggestTextarea.textarea.focus();
+  }
+
   render () {
-    const { intl, onPaste, showSearch, onRisaSubmit } = this.props;
+    const { intl, onPaste, showSearch } = this.props;
     const disabled = this.props.is_submitting;
     const text     = [this.props.spoiler_text, countableText(this.props.text)].join('');
 
@@ -209,7 +214,7 @@ export default class ComposeForm extends ImmutablePureComponent {
 
         <div className='compose-form__publish'>
           <div className='compose-form__publish-button-wrapper'>
-            <Button id="utilBtns__button--risa" className="utilBtns__button" text={intl.formatMessage(messages.risa)} onClick={onRisaSubmit} block />
+            <Button id="utilBtns__button--risa" className="utilBtns__button" text={intl.formatMessage(messages.risa)} onClick={this.handleOnRisaSubmit} block />
             <Button text={publishText} onClick={this.handleSubmit} disabled={disabled || this.props.is_uploading || length(text) > 500 || (text.length !== 0 && text.trim().length === 0)} block />
           </div>
         </div>
