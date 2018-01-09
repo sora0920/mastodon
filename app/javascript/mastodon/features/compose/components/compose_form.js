@@ -26,7 +26,9 @@ const messages = defineMessages({
   publish: { id: 'compose_form.publish', defaultMessage: 'Toot' },
   publishLoud: { id: 'compose_form.publish_loud', defaultMessage: '{publish}!' },
   
-  risa: { id: 'compose_form.UtilBtns_risa', defaultMessage: 'RISA' }
+  utilBtns_risa: { id: 'compose_form.utilBtns_risa', defaultMessage: 'RISA' },
+  utilBtns_goji: { id: 'compose_form.utilBtns_goji', defaultMessage: 'Typo!!!' },
+  utilBtns_harukin: { id: 'compose_form.utilBtns_harukin', defaultMessage: 'Burn Harukin' }
 });
 
 @injectIntl
@@ -54,7 +56,9 @@ export default class ComposeForm extends ImmutablePureComponent {
     onPickEmoji: PropTypes.func.isRequired,
     showSearch: PropTypes.bool,
 
-    onRisaSubmit: PropTypes.func.isRequired
+    onRisaSubmit: PropTypes.func.isRequired,
+    onGojiSubmit: PropTypes.func.isRequired,
+    onHarukinSubmit: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -146,10 +150,9 @@ export default class ComposeForm extends ImmutablePureComponent {
     this.props.onPickEmoji(position, data);
   }
 
-  handleOnRisaSubmit = () => {
-    this.props.onRisaSubmit(this.autosuggestTextarea.textarea.value);
-    this.autosuggestTextarea.textarea.focus();
-  }
+  handleOnRisaSubmit = () => this.props.onRisaSubmit(this.autosuggestTextarea.textarea);
+  handleOnGojiSubmit = () => this.props.onGojiSubmit(this.autosuggestTextarea.textarea);
+  handleOnHarukinSubmit = () => this.props.onHarukinSubmit(this.autosuggestTextarea.textarea);
 
   render () {
     const { intl, onPaste, showSearch } = this.props;
@@ -214,12 +217,15 @@ export default class ComposeForm extends ImmutablePureComponent {
 
         <div className='compose-form__publish'>
           <div className='compose-form__publish-button-wrapper'>
-            <Button id="utilBtns__button--risa" className="utilBtns__button" text={intl.formatMessage(messages.risa)} onClick={this.handleOnRisaSubmit} block />
+            <Button id="utilBtns__button--risa" className="utilBtns__button" text={intl.formatMessage(messages.utilBtns_risa)} onClick={this.handleOnRisaSubmit} block />
             <Button text={publishText} onClick={this.handleSubmit} disabled={disabled || this.props.is_uploading || length(text) > 500 || (text.length !== 0 && text.trim().length === 0)} block />
           </div>
         </div>
 
-        <UtilBtns />
+        <div id="utilBtns">
+          <Button id="utilBtns__button--goji" className="utilBtns__button" text={intl.formatMessage(messages.utilBtns_goji)} onClick={this.handleOnGojiSubmit} block />
+          <Button id="utilBtns__button--harukin" className="utilBtns__button" text={intl.formatMessage(messages.utilBtns_harukin)} onClick={this.handleOnHarukinSubmit} block />
+        </div>
       </div>
     );
   }
