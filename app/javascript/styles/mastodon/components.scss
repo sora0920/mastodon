@@ -538,17 +538,9 @@
 
   .compose-form__publish {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     min-width: 0;
     padding-top: 10px;
-
-    * {
-      margin-right: 1em;
-    }
-
-    *:last-child {
-      margin-right: auto;
-    }
 
     .user-counter__wrapper {
       display: inline-flex;
