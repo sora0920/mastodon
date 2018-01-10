@@ -218,7 +218,7 @@ export default class ComposeForm extends ImmutablePureComponent {
         <div className='compose-form__publish'>
           <div className="user-counter__wrapper">
             <i className="fa fa-users"></i>
-            <span>10人</span>
+            <span>近日実装予定</span>
           </div>
 
           <div className='compose-form__publish-button-wrapper'>
