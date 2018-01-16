@@ -26,13 +26,14 @@
     = yield :header_tags
     
     / Global site tag (gtag.js) - Google Analytics
-    %script{ src: 'https://www.googletagmanager.com/gtag/js?id=UA-112532720-1', async: 'async' }
+    - analyticsId = 'UA-112532720-1'
+    %script{ src: 'https://www.googletagmanager.com/gtag/js?id=#{analyticsId}', async: 'async' }
     :javascript
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-112532720-1');
+      gtag('config', '#{analyticsId}');
 
   - body_classes ||= @body_classes || ''
   - body_classes += ' system-font' if current_account&.user&.setting_system_font_ui
