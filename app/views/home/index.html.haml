@@ -8,6 +8,16 @@
 
   = javascript_pack_tag 'application', integrity: true, crossorigin: 'anonymous'
 
+  / Global site tag (gtag.js) - Google Analytics
+  - analytics_id = 'UA-112532720-1'
+  %script{ src: 'https://www.googletagmanager.com/gtag/js?id=#{analytics_id}', async: 'async' }
+  :javascript
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+    gtag('config', '#{analytics_id}');
+
 .app-holder#mastodon{ data: { props: Oj.dump(default_props) } }
   %noscript
     = image_tag asset_pack_path('logo.svg'), alt: 'Mastodon'
