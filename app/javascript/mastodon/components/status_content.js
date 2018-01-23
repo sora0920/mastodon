@@ -115,7 +115,7 @@ export default class StatusContent extends React.PureComponent {
   render () {
     const { status } = this.props;
 
-    const hidden = this.props.onExpandedToggle ? !this.props.expanded : this.state.hidden;
+    const hidden = this.props.onExpandedToggle ? !this.props.expanded : this.state.hidden
 
     const content = { __html: status.get('contentHtml') };
     const spoilerContent = { __html: status.get('spoilerHtml') };
@@ -128,6 +128,8 @@ export default class StatusContent extends React.PureComponent {
     if (isRtl(status.get('search_index'))) {
       directionStyle.direction = 'rtl';
     }
+    
+    [ content, spoilerContent ].forEach(text => text.__html = text.__html.replace(/\*(\S*)\*/g, "<b>$1</b>").replace(/_(\S*)_/g, "<i>$1</i>").replace(/-(\S*)-/g, "<s>$1</s>"));
 
     if (status.get('spoiler_text').length > 0) {
       let mentionsPlaceholder = '';
