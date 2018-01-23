@@ -129,7 +129,7 @@ export default class StatusContent extends React.PureComponent {
       directionStyle.direction = 'rtl';
     }
     
-    [ content, spoilerContent ].forEach(text => text.__html = text.__html.replace(/\*(\S*)\*/g, "<b>$1</b>").replace(/_(\S*)_/g, "<i>$1</i>").replace(/-(\S*)-/g, "<s>$1</s>"));
+    [ content, spoilerContent ].forEach(text => text.__html = text.__html.replace(/-(\w*)-/g, "<s>$1</s>").replace(/\*(\w*)\*/g, "<b>$1</b>").replace(/_(\w*)_/g, "<i>$1</i>"));
 
     if (status.get('spoiler_text').length > 0) {
       let mentionsPlaceholder = '';
