@@ -91,12 +91,7 @@ export function mentionCompose(account, router) {
 
 export function submitCompose() {
   return function (dispatch, getState) {
-    let status = getState().getIn(['compose', 'text'], '');
-    let spoiler_text = getState().getIn(['compose', 'spoiler_text'], '');
-
-    [ status, spoiler_text ].forEach(text => {
-      text = text.replace(/-([^-]*)-/g, "<s>$1</s>")
-    });
+    const status = getState().getIn(['compose', 'text'], '');
 
     if (!status || !status.length) {
       return;
@@ -109,7 +104,7 @@ export function submitCompose() {
       in_reply_to_id: getState().getIn(['compose', 'in_reply_to'], null),
       media_ids: getState().getIn(['compose', 'media_attachments']).map(item => item.get('id')),
       sensitive: getState().getIn(['compose', 'sensitive']),
-      spoiler_text,
+      spoiler_text: getState().getIn(['compose', 'spoiler_text'], ''),
       visibility: getState().getIn(['compose', 'privacy']),
     }, {
       headers: {
