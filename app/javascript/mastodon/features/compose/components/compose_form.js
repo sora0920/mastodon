@@ -54,8 +54,12 @@ export default class ComposeForm extends ImmutablePureComponent {
     onChangeSpoilerText: PropTypes.func.isRequired,
     onPaste: PropTypes.func.isRequired,
     onPickEmoji: PropTypes.func.isRequired,
+    showSearch: PropTypes.bool,
     anyMedia: PropTypes.bool,
 
+    onRisaSubmit: PropTypes.func.isRequired,
+    onGojiSubmit: PropTypes.func.isRequired,
+    onHarukinSubmit: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -213,7 +217,17 @@ export default class ComposeForm extends ImmutablePureComponent {
         </div>
 
         <div className='compose-form__publish'>
-          <div className='compose-form__publish-button-wrapper'><Button text={publishText} onClick={this.handleSubmit} disabled={disabledButton} block /></div>
+          <div className='compose-form__publish-button-wrapper'>
+            <Button className="compose-form__utilBtns-risa" text={intl.formatMessage(messages.utilBtns_risa)} onClick={this.handleOnRisaSubmit} />
+            <Button text={publishText} onClick={this.handleSubmit} disabled={disabledButton} block>
+              <span className="fa fa-send">{publishText}</span>
+            </Button>
+          </div>
+        </div>
+
+        <div className="compose-form__utilBtns">
+          <Button className="compose-form__utilBtns-goji" text={intl.formatMessage(messages.utilBtns_goji)} onClick={this.handleOnGojiSubmit} block />
+          <Button className="compose-form__utilBtns-harukin" text={intl.formatMessage(messages.utilBtns_harukin)} onClick={this.handleOnHarukinSubmit} block />
         </div>
       </div>
     );
