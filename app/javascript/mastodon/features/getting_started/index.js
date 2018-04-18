@@ -118,8 +118,8 @@ export default class GettingStarted extends ImmutablePureComponent {
       navItems.push(<ColumnLink key='8' icon='question' text={intl.formatMessage(messages.keyboard_shortcuts)} to='/keyboard-shortcuts' />);
     }
 
-    navItems.push(<ColumnLink key='8' icon='info-circle' text={intl.formatMessage(messages.announcements)} to='/timelines/tag/Yづドンインフォ' />);
-    navItems.push(<ColumnLink key='9' icon='book' text={intl.formatMessage(messages.info)} href='/about/more' />);
+    navItems.push(<ColumnLink key='9' icon='info-circle' text={intl.formatMessage(messages.announcements)} to='/timelines/tag/Yづドンインフォ' />);
+    navItems.push(<ColumnLink key='10' icon='book' text={intl.formatMessage(messages.info)} href='/about/more' />);
 
     return (
       <Column icon='asterisk' heading={intl.formatMessage(messages.heading)} hideHeadingOnMobile>
