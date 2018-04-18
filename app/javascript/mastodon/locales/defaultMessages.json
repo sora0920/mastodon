@@ -243,6 +243,14 @@
         "id": "status.reblog"
       },
       {
+        "defaultMessage": "Boost to original audience",
+        "id": "status.reblog_private"
+      },
+      {
+        "defaultMessage": "Unboost",
+        "id": "status.cancel_reblog_private"
+      },
+      {
         "defaultMessage": "This post cannot be boosted",
         "id": "status.cannot_reblog"
       },
@@ -912,6 +920,19 @@
   {
     "descriptors": [
       {
+        "defaultMessage": "Direct messages",
+        "id": "column.direct"
+      },
+      {
+        "defaultMessage": "You don't have any direct messages yet. When you send or receive one, it will show up here.",
+        "id": "empty_column.direct"
+      }
+    ],
+    "path": "app/javascript/mastodon/features/direct_timeline/index.json"
+  },
+  {
+    "descriptors": [
+      {
         "defaultMessage": "Hidden domains",
         "id": "column.domain_blocks"
       },
@@ -982,6 +1003,10 @@
       {
         "defaultMessage": "Local timeline",
         "id": "navigation_bar.community_timeline"
+      },
+      {
+        "defaultMessage": "Direct messages",
+        "id": "navigation_bar.direct"
       },
       {
         "defaultMessage": "Preferences",
@@ -1416,6 +1441,14 @@
         "id": "status.reblog"
       },
       {
+        "defaultMessage": "Boost to original audience",
+        "id": "status.reblog_private"
+      },
+      {
+        "defaultMessage": "Unboost",
+        "id": "status.cancel_reblog_private"
+      },
+      {
         "defaultMessage": "This post cannot be boosted",
         "id": "status.cannot_reblog"
       },
@@ -1831,18 +1864,5 @@
       }
     ],
     "path": "app/javascript/mastodon/features/video/index.json"
-  },
-  {
-    "descriptors": [
-      {
-        "defaultMessage": "Oops!",
-        "id": "alert.unexpected.title"
-      },
-      {
-        "defaultMessage": "An unexpected error occurred.",
-        "id": "alert.unexpected.message"
-      }
-    ],
-    "path": "app/javascript/mastodon/middleware/errors.json"
   }
 ]
