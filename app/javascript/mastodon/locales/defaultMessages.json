@@ -1165,6 +1165,10 @@
         "id": "keyboard_shortcuts.enter"
       },
       {
+        "defaultMessage": "to show/hide text behind CW",
+        "id": "keyboard_shortcuts.toggle_hidden"
+      },
+      {
         "defaultMessage": "to move up in the list",
         "id": "keyboard_shortcuts.up"
       },
