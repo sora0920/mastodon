@@ -117,8 +117,6 @@ export default class GettingStarted extends ImmutablePureComponent {
     }
 
     navItems.push(<ColumnLink key='9' icon='info-circle' text={intl.formatMessage(messages.announcements)} to='/timelines/tag/Yづドンインフォ' />);
-    navItems.push(<ColumnLink key='10' icon='book' text={intl.formatMessage(messages.info)} href='/about/more' />);
-
     return (
       <Column>
         {multiColumn && <div className='column-header__wrapper'>
