@@ -1,3 +1,5 @@
+app/javascript/mastodon/features/getting_started/index.js
+
 import React from 'react';
 import Column from '../ui/components/column';
 import ColumnLink from '../ui/components/column_link';
@@ -34,9 +36,6 @@ const messages = defineMessages({
   discover: { id: 'navigation_bar.discover', defaultMessage: 'Discover' },
   personal: { id: 'navigation_bar.personal', defaultMessage: 'Personal' },
   security: { id: 'navigation_bar.security', defaultMessage: 'Security' },
-  keyboard_shortcuts: { id: 'navigation_bar.keyboard_shortcuts', defaultMessage: 'Keyboard shortcuts' },
-
-  announcements: { id: 'navigation_bar.announcements', defaultMessage: 'Announcements from Admin' },
 });
 
 const mapStateToProps = state => ({
@@ -117,9 +116,6 @@ export default class GettingStarted extends ImmutablePureComponent {
       );
     }
 
-    navItems.push(<ColumnLink key='9' icon='info-circle' text={intl.formatMessage(messages.announcements)} to='/timelines/tag/Yづドンインフォ' />);
-    navItems.push(<ColumnLink key='10' icon='book' text={intl.formatMessage(messages.info)} href='/about/more' />);
-
     return (
       <Column>
         {multiColumn && <div className='column-header__wrapper'>
@@ -174,5 +170,3 @@ export default class GettingStarted extends ImmutablePureComponent {
       </Column>
     );
   }
-
-}
