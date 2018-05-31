@@ -34,6 +34,9 @@ const messages = defineMessages({
   discover: { id: 'navigation_bar.discover', defaultMessage: 'Discover' },
   personal: { id: 'navigation_bar.personal', defaultMessage: 'Personal' },
   security: { id: 'navigation_bar.security', defaultMessage: 'Security' },
+  keyboard_shortcuts: { id: 'navigation_bar.keyboard_shortcuts', defaultMessage: 'Keyboard shortcuts' },
+
+  announcements: { id: 'navigation_bar.announcements', defaultMessage: 'Announcements from Admin' },
 });
 
 const mapStateToProps = state => ({
@@ -113,6 +116,9 @@ export default class GettingStarted extends ImmutablePureComponent {
         <ColumnLink key='6' icon='lock' text={intl.formatMessage(messages.security)} href='/auth/edit' />
       );
     }
+
+    navItems.push(<ColumnLink key='9' icon='info-circle' text={intl.formatMessage(messages.announcements)} to='/timelines/tag/Yづドンインフォ' />);
+    navItems.push(<ColumnLink key='10' icon='book' text={intl.formatMessage(messages.info)} href='/about/more' />);
 
     return (
       <Column>
