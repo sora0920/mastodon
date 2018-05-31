@@ -35,7 +35,6 @@ const messages = defineMessages({
   personal: { id: 'navigation_bar.personal', defaultMessage: 'Personal' },
   security: { id: 'navigation_bar.security', defaultMessage: 'Security' },
   keyboard_shortcuts: { id: 'navigation_bar.keyboard_shortcuts', defaultMessage: 'Keyboard shortcuts' },
-
   announcements: { id: 'navigation_bar.announcements', defaultMessage: 'Announcements from Admin' },
 });
 
