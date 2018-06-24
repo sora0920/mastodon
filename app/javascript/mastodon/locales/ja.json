@@ -258,7 +258,7 @@
   "status.delete": "削除",
   "status.direct": "@{name}さんにダイレクトメッセージ",
   "status.embed": "埋め込み",
-  "status.favourite": ふぁぼ,
+  "status.favourite": "ふぁぼ",
   "status.load_more": "もっと見る",
   "status.media_hidden": "非表示のメディア",
   "status.mention": "@{name}さんにトゥート",
