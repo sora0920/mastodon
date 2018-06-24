@@ -25,7 +25,7 @@ ja:
         edit: 編集
         submit: 送信
       confirmations:
-        destroy: 本当に削除しますか？
+        destroy: 失った信頼はもう戻ってきませんが、本当にこのトゥートを削除しますか？
       edit:
         title: アプリの編集
       form:
